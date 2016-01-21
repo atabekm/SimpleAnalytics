@@ -1,0 +1,14 @@
+{
+  "name": "simple_analytics",
+  "version": "1.0.0",
+  "description": "Simple analytics application utilizing Node.js, Express, and MongoDB",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Atabek M",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
