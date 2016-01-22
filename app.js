@@ -1,7 +1,8 @@
 var express = require('express');
 var path = require('path');
 
-var index = require('./routes/index')
+var index = require('./routes/index');
+var api = require('./routes/api');
 
 var app = express();
 
@@ -11,6 +12,7 @@ app.set('view engine', 'jade');
 
 // routes
 app.use('/', index);
+app.use('/api/event', api);
 
 app.listen(3000);
 console.log("Server started");
