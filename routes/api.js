@@ -1,8 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/events');
+var request = require('request');
 
 var Event = require('../models/Event.js');
 
@@ -19,11 +18,22 @@ router.get('/', function(req, res, next) {
 
 /* POST an event */
 router.post('/', parser, function(req, res, next) {
-  console.log(req.body);
-  Event.create(req.body, function(err, _event) {
+  var result = req.body;
+  //console.log(result);
+
+  request({
+    method: 'GET',
+    url: 'http://ipinfo.io/country'
+  }, function(err, getResult, body) {
     if (err) return next(err);
-    res.json(_event)
-  })
+
+    result['country'] = body.replace('\n', '');
+
+    Event.create(result, function(err, _event) {
+      if (err) return next(err);
+      res.json(_event)
+    });
+  });
 });
 
 module.exports = router;

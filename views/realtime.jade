@@ -1,0 +1,17 @@
+extends ./partials/base
+
+block content
+  .page-header
+    h1 Realtime tracking
+  table.table.table-striped
+    tr
+      th(style='width: 15%') Time
+      th(style='width: 55%') Event
+      th(style='width: 15%') Client
+      th(style='width: 15%') Country
+    each e in events
+      tr
+        td #{moment(e.date).format("HH:mm YYYY-MM-DD")}
+        td #{e.event_name}
+        td #{e.client}
+        td #{e.country}

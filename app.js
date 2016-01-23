@@ -3,6 +3,10 @@ var path = require('path');
 
 var index = require('./routes/index');
 var api = require('./routes/api');
+var realtime = require('./routes/realtime');
+
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/events');
 
 var app = express();
 
@@ -14,6 +18,7 @@ app.use(express.static(__dirname + '/public'));
 // routes
 app.use('/', index);
 app.use('/api/event', api);
+app.use('/realtime', realtime);
 
 app.listen(3000);
 console.log("Server started");

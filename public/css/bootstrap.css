@@ -16,9 +16,12 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  position: relative;
+  min-height: 100%;
 }
 body {
   margin: 0;
+  margin-bottom: 60px;
 }
 article,
 aside,
