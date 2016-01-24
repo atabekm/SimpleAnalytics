@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css')
+    script(src='http://code.jquery.com/jquery-2.2.0.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js')
+  
+  body
+    include ./partials/header.jade
+
+    .container
+        .row
+            block content
+
+    block scripts
+
+    include ./partials/footer.jade

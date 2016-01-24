@@ -1,0 +1,15 @@
+extends ./base_dashboard
+
+block dashboard_content
+
+  h1.page-header By time
+
+  #my_chart(style="height: 250px;")
+
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js')
+  script(src='/js/time.js')
+  script.
+    var result = !{JSON.stringify(events)}
+    parse(result)
+
+block scripts

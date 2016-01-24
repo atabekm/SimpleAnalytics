@@ -1,0 +1,27 @@
+extends ./base_dashboard
+
+block dashboard_content
+
+  h1.page-header By country count
+
+  .row
+    .col-lg-6
+      .table-responsive
+        table.table.table-striped
+          tr
+            th #
+            th Country
+            th Count
+          - var counter = 1
+          each e in events
+            tr
+              td #{counter++}
+              td #{e.label}
+              td #{e.value}
+    .col-lg-6
+      #my_chart(style="height: 450px;")
+
+      script(src='/js/country.js')
+      script.
+        var result = !{JSON.stringify(events)}
+        parse(result)

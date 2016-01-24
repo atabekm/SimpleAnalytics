@@ -1,0 +1,18 @@
+extends ./base_dashboard
+
+block dashboard_content
+
+  h1.page-header By event count
+
+  .table-responsive
+    table.table.table-striped
+      tr
+        th #
+        th Event
+        th Count
+      - var counter = 1
+      each e in events
+        tr
+          td #{counter++}
+          td #{e.event}
+          td #{e.val}

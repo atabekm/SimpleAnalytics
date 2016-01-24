@@ -1,0 +1,31 @@
+extends ./base_dashboard
+
+block dashboard_content
+  h1.page-header Dashboard
+  .row.placeholders
+    .col-xs-12.col-sm-6.placeholder
+      a(href='/dashboard/daily'): img(src="/images/daily.png").img-responsive
+      h4 Graph events by day
+      span.text-muted You can see how many events are triggered on daily basis
+
+    .col-xs-12.col-sm-6.placeholder
+      a(href='/dashboard/client'): img(src="/images/client.png").img-responsive
+      h4 Events based on client
+      span.text-muted See how many of the events are coming from web or mobile
+
+  .row.placeholders
+    .col-xs-12.col-sm-6.placeholder
+      a(href='/dashboard/time'): img(src="/images/time.png").img-responsive
+      h4 Events according to hours
+      span.text-muted Check out which part of the day are most fruitful for events
+
+    .col-xs-12.col-sm-6.placeholder
+      a(href='/dashboard/event'): img(src="/images/event.png").img-responsive
+      h4 Events and numbers
+      span.text-muted Here you can find which events are called how many times
+
+  .row.placeholders
+    .col-xs-12.col-sm-6.placeholder
+      a(href='/dashboard/country'): img(src="/images/country.png").img-responsive
+      h4 Events by countries
+      span.text-muted Observe which countries take the lead

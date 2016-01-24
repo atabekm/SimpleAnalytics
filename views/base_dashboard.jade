@@ -1,0 +1,16 @@
+extends ./base
+
+block content
+  .col-lg-2
+    ul.nav.nav-sidebar
+      li.active #[a(href='/dashboard') Overview]
+      li #[a(href='/dashboard/daily') Daily]
+      li #[a(href='/dashboard/client') Daily by client type]
+      li #[a(href='/dashboard/time') By time]
+      li #[a(href='/dashboard/event') By event count]
+      li #[a(href='/dashboard/country') By country]
+
+  .col-lg-10.main
+    block dashboard_content
+
+block scripts
