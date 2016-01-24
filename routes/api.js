@@ -8,6 +8,8 @@ var Event = require('../models/Event.js');
 var bodyParser = require('body-parser');
 var parser = bodyParser.urlencoded({ extended: false });
 
+var io = require('../io');
+
 /* GET all events. */
 router.get('/', function(req, res, next) {
   Event.find(function(err, events) {
@@ -31,7 +33,11 @@ router.post('/', parser, function(req, res, next) {
 
     Event.create(result, function(err, _event) {
       if (err) return next(err);
-      res.json(_event)
+
+      console.log(_event);
+
+      io.emit('analytics', { data: _event });
+      res.json(_event);
     });
   });
 });

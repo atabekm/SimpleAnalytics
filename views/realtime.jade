@@ -3,7 +3,7 @@ extends ./partials/base
 block content
   .page-header
     h1 Realtime tracking
-  table.table.table-striped
+  table.table.table-striped#t
     tr
       th(style='width: 15%') Time
       th(style='width: 55%') Event
@@ -15,3 +15,8 @@ block content
         td #{e.event_name}
         td #{e.client}
         td #{e.country}
+
+block scripts
+  script(src='/socket.io/socket.io.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js')
+  script(src='/js/analytics.js')

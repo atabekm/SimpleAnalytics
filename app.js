@@ -20,5 +20,8 @@ app.use('/', index);
 app.use('/api/event', api);
 app.use('/realtime', realtime);
 
-app.listen(3000);
+var server = app.listen(3000);
 console.log("Server started");
+
+var io = require('./io');
+io.attach(server);

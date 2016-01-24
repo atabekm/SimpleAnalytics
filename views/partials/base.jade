@@ -3,11 +3,14 @@ html
   head
     title= title
     link(rel='stylesheet', href='/css/bootstrap.css')
+    script(src='http://code.jquery.com/jquery-2.2.0.min.js')
   body
     include ./header.jade
 
     .container
         .row
             block content
+
+    block scripts
 
     include ./footer.jade
